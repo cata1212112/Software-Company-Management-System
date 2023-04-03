@@ -12,13 +12,20 @@ Actiuni:
   - Afisare proiecte
   - Afisare departamente
   - Calculare salariu pentru departament/echipa
+  - Analiza performata proiect
+  - Adaugare task pe proiect
 
 Obiecte:
   - Company
   - Employee
     - Developer
-    - 
+    - Tester
+    - HumanResources
   - Team
   - Project
   - Department
+    - HR
+    - Marketing
+    - IT
+  - Task
   - GlobalService
