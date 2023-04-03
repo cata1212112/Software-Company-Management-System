@@ -16,8 +16,8 @@ Actiuni:
 Obiecte:
   - Company
   - Employee
-        -- Developer
-        -- 
+    - Developer
+    - 
   - Team
   - Project
   - Department
