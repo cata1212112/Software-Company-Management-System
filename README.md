@@ -12,3 +12,13 @@ Actiuni:
   - Afisare proiecte
   - Afisare departamente
   - Calculare salariu pentru departament/echipa
+
+Obiecte:
+  - Company
+  - Employee
+        - Developer
+        - 
+  - Team
+  - Project
+  - Department
+  - GlobalService
