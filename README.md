@@ -2,13 +2,13 @@
 
 Actiuni:
   - Creeare echipa
-  - Adaugare proiect
+  - Creeare proiect
+  - Creeare task
   - Adaugare angajat in echipa
   - Adaugat echipa pe proiect
   - Afisare angajati
   - Afisare echipe
   - Afisare proiecte
-  - Afisare departamente
   - Calculare salariu pentru departament/echipa
   - Adaugare task pe proiect
 
