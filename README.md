@@ -1,7 +1,6 @@
 # Software-Company-Management-System
 
 Actiuni:
-  - Creeare companie
   - Creeare echipa
   - Creare departament
   - Adaugare proiect
@@ -16,7 +15,6 @@ Actiuni:
   - Adaugare task pe proiect
 
 Obiecte:
-  - Company
   - Employee
     - Developer
     - Tester
