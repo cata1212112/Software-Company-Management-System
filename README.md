@@ -11,7 +11,6 @@ Actiuni:
   - Afisare proiecte
   - Afisare departamente
   - Calculare salariu pentru departament/echipa
-  - Analiza performata proiect
   - Adaugare task pe proiect
 
 Obiecte:
