@@ -2,6 +2,7 @@
 
 Actiuni:
   - Creeare echipa
+  - Creeare proiect
   - Adaugare proiect
   - Adaugare angajat in echipa
   - Adaugat echipa pe proiect
