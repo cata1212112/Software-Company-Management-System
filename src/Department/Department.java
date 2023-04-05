@@ -15,4 +15,10 @@ public abstract class Department {
     public void addTeam(Team team) {
         this.teams.put(team.getName(), team);
     }
+
+    public void showEmployees() {
+        for (Employee e:this.employees) {
+            System.out.println(e);
+        }
+    }
 }

@@ -13,4 +13,14 @@ public class Tester extends Employee{
     public void setRole(Roles role) {
 
     }
+
+    @Override
+    public void addPrLang(String lang) {
+
+    }
+
+    @Override
+    public String toString() {
+        return "TESTER: " + super.toString();
+    }
 }

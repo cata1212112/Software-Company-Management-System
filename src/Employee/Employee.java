@@ -43,4 +43,9 @@ public abstract class Employee {
     public abstract void setRole(Roles role);
 
     public abstract void addPrLang(String lang);
+
+    @Override
+    public String toString() {
+        return "ID: " + this.employee_id + " NAME: " + this.name + " EMAIL: " + this.email;
+    }
 }

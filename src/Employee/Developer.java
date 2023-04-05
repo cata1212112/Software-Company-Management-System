@@ -24,4 +24,9 @@ public class Developer extends Employee{
     public void addPrLang(String lang) {
         this.programmingLanguages.add(lang);
     }
+
+    @Override
+    public String toString() {
+        return "DEVELOPER: " + super.toString();
+    }
 }

@@ -31,4 +31,8 @@ public class EmployeeBuilder {
         employee.addPrLang(lang);
         return this;
     }
+
+    public Employee build() {
+        return this.employee;
+    }
 }
