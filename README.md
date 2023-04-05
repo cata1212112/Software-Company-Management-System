@@ -2,7 +2,6 @@
 
 Actiuni:
   - Creeare echipa
-  - Creare departament
   - Adaugare proiect
   - Adaugare angajat in echipa
   - Adaugat echipa pe proiect
