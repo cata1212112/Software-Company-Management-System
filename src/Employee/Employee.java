@@ -6,14 +6,14 @@ public abstract class Employee {
     protected int employee_id;
     protected String name;
     protected String email;
+
+    private int team_id;
     protected float salary;
 
-    static {
-        id++;
-    }
+    private Role.Position role;
 
     {
-        employee_id = id;
+        employee_id = id++;
     }
 
     public Employee() {
@@ -30,6 +30,10 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    public void setTeam_id(int team_id) {
+        this.team_id = team_id;
+    }
+
     public Employee(String name, String email, float salary) {
         this.name = name;
         this.email = email;
@@ -40,12 +44,18 @@ public abstract class Employee {
         return employee_id;
     }
 
-    public abstract void setRole(Roles role);
+    public void setRole(Role.Position role) {
+        this.role = role;
+    }
 
-    public abstract void addPrLang(String lang);
+    public abstract void addPrLang(String []lang);
 
     @Override
     public String toString() {
-        return "ID: " + this.employee_id + " NAME: " + this.name + " EMAIL: " + this.email;
+        return "ID: " + this.employee_id + " NAME: " + this.name + " EMAIL: " + this.email + " TEAM: " + this.team_id;
+    }
+
+    public float getSalary() {
+        return salary;
     }
 }

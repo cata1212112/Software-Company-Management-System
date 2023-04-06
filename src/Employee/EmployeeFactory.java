@@ -1,20 +1,19 @@
 package Employee;
 
-import java.util.Objects;
-
 public class EmployeeFactory {
     private EmployeeFactory() {
 
     }
 
-    public static Employee getEmployee(String tip) {
-        if (tip.equals("developer")) {
+    public static Employee getEmployee(Role role) {
+        if (role.equals(Role.DEVELOPER)) {
             return new Developer();
-        } else if (tip.equals("tester")) {
-            return new Tester();
-        } else if (tip.equals("hr")) {
+        } else if (role.equals(Role.MARKETING)) {
+            return new MarketingAssistant();
+        } else if (role.equals(Role.HR)) {
             return new HumanResources();
         }
         return null;
     }
+
 }

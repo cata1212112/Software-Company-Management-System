@@ -22,12 +22,16 @@ public class EmployeeBuilder {
         return this;
     }
 
-    public EmployeeBuilder withRole(Roles role) {
+    public EmployeeBuilder withRole(Role.Position role) {
         employee.setRole(role);
         return this;
     }
 
-    public EmployeeBuilder withProgrammingLanguage(String lang) {
+    public EmployeeBuilder withTeamID(int team_id) {
+        employee.setTeam_id(team_id);
+        return this;
+    }
+    public EmployeeBuilder withProgrammingLanguages(String []lang) {
         employee.addPrLang(lang);
         return this;
     }

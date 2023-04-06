@@ -4,7 +4,7 @@ public class Marketing extends Department{
     private static Marketing instance = null;
 
     private Marketing() {
-
+        super();
     }
 
     public static Marketing getInstance() {

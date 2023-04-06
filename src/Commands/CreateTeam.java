@@ -1,23 +1,26 @@
 package Commands;
 
+import Employee.Role;
 import Team.Team;
 
 public class CreateTeam implements Command{
-    private String department;
+    private Role department;
     private String nume;
 
 
-    public CreateTeam(String department, String nume) {
-        this.department = department;
-        this.nume = nume;
+    public CreateTeam(String line) {
+        String[] lines = line.split(" ");
+        this.department = Role.valueOf(lines[1].toUpperCase());;
+        this.nume = lines[2];
     }
 
     @Override
     public void execute() {
         switch (this.department) {
-            case "IT" -> departmentIT.get().addTeam(new Team(this.nume));
-            case "HR" -> departmentHR.get().addTeam(new Team(this.nume));
-            case "Marketing" -> departmentMarketing.get().addTeam(new Team(this.nume));
+            case DEVELOPER -> departmentIT.get().addTeam(new Team(this.nume));
+            case HR -> departmentHR.get().addTeam(new Team(this.nume));
+            case MARKETING -> departmentMarketing.get().addTeam(new Team(this.nume));
+            default -> System.out.println("Invalid department.");
         }
     }
 }

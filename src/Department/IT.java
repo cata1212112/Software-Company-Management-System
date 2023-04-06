@@ -4,7 +4,7 @@ public class IT extends Department{
     private static IT instance = null;
 
     private IT() {
-
+        super();
     }
 
     public static IT getInstance() {
