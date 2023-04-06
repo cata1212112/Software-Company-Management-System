@@ -5,12 +5,14 @@ Actiuni:
   - Creeare proiect
   - Creeare task
   - Adaugare angajat in echipa
-  - Adaugat echipa pe proiect
   - Afisare angajati
   - Afisare echipe
   - Afisare proiecte
   - Calculare salariu pentru departament/echipa
   - Adaugare task pe proiect
+  - Adaugare employee pe task
+  - Terminare task
+  - Terminare proiect
 
 Obiecte:
   - Employee
