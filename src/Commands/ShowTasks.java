@@ -4,21 +4,24 @@ import Employee.Role;
 import Project.Project;
 import Team.Team;
 
-public class ShowTasks implements Command {
+import java.util.Optional;
 
-    private Integer teamId;
+public class ShowTasks implements Command {
     private Integer projectId;
 
     public ShowTasks(String line) {
-        this.teamId = Integer.parseInt(line.split(" ")[1]);
-        this.projectId = Integer.parseInt(line.split(" ")[2]);
+        this.projectId = Integer.parseInt(line.split(" ")[1]);
     }
 
     @Override
     public void execute() {
-        Team team = departmentIT.get().getTeams().get(teamId);
-        Project project = team.getProjectByID(projectId);
 
-        project.showTasks();
+        Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
+                .filter(t -> t.getProjects().stream().anyMatch(pr -> pr.getProject_id() == this.projectId)).findFirst();
+
+        if (teamOptional.isPresent()) {
+            Project project = teamOptional.get().getProjectByID(projectId);
+            project.showTasks();
+        }
     }
 }

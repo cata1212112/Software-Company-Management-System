@@ -15,9 +15,22 @@ public class SalaryTeam implements Command{
 
     @Override
     public void execute() {
-        Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
+        Optional<Team> teamOptional1 = departmentIT.get().getTeams().values().stream()
                 .filter(t -> t.getId() == this.team_id).findFirst();
 
+        Optional<Team> teamOptional2 = departmentHR.get().getTeams().values().stream()
+                .filter(t -> t.getId() == this.team_id).findFirst();
+
+        Optional<Team> teamOptional3 = departmentMarketing.get().getTeams().values().stream()
+                .filter(t -> t.getId() == this.team_id).findFirst();
+
+        Optional<Team> teamOptional = teamOptional1;
+        if (teamOptional2.isPresent()) {
+            teamOptional = teamOptional2;
+        }
+        if (teamOptional3.isPresent()) {
+            teamOptional = teamOptional3;
+        }
         float sum = 0;
         if (teamOptional.isPresent()) {
             Team team = teamOptional.get();

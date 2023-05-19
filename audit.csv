@@ -1,0 +1,56 @@
+2023-05-20 01:02:28,add-team DEVELOPER Team1
+2023-05-20 01:02:30,add-team DEVELOPER Team2
+2023-05-20 01:02:32,add-team DEVELOPER Team3
+2023-05-20 01:02:33,add-team MARKETING Team4
+2023-05-20 01:02:35,add-team MARKETING Team5
+2023-05-20 01:02:36,add-team MARKETING Team6
+2023-05-20 01:02:38,add-team HR Team7
+2023-05-20 01:02:41,add-team HR Team8
+2023-05-20 01:02:43,show-teams DEVELOPER
+2023-05-20 01:02:45,show-teams MARKETING
+2023-05-20 01:02:48,show-teams HR
+2023-05-20 01:02:52,add-employee-in-team cata cata@gmail.com 2000 SENIOR_DEVELOPER 0 c++ python
+2023-05-20 01:02:55,add-employee-in-team alex alex@gmail.com 1800 JUNIOR_DEVELOPER 1 bash python perl
+2023-05-20 01:02:57,add-employee-in-team vald vlad@gmail.com 1500 JUNIOR_DEVELOPER 0 basic C#
+2023-05-20 01:03:00,add-employee-in-team toma toma@gmail.com 1600 JUNIOR_DEVELOPER 2 c haskell javascript go
+2023-05-20 01:03:03,add-employee-in-team eu eu@gmail.com 1900 SENIOR_DEVELOPER 2 gotran brainfuck J++
+2023-05-20 01:03:05,add-employee-in-team tu tu@gmail.com 1000 JUNIOR_DEVELOPER 1 JOSS
+2023-05-20 01:03:09,add-employee-in-team noi noi@gmail.com 1500 MARKETING_ASSISTANT 3
+2023-05-20 01:03:11,add-employee-in-team voi voi@gmail.com 1400 MARKETING_ASSISTANT 4
+2023-05-20 01:03:16,add-employee-in-team ea ea@gmail.com 2200 MARKETING_MANAGER 4
+2023-05-20 01:03:19,add-employee-in-team el el@gmail.com 7200 MARKETING_MANAGER 5
+2023-05-20 01:03:21,add-employee-in-team ei ei@gmail.com 6200 HR_MANAGER 6
+2023-05-20 01:03:24,add-employee-in-team ele ele@gmail.com 4200 HR_ASSISTANT 6
+2023-05-20 01:03:27,add-employee-in-team toti toti@gmail.com 5200 HR_ASSISTANT 7
+2023-05-20 01:03:30,show-employees DEVELOPER
+2023-05-20 01:03:32,show-employees MARKETING
+2023-05-20 01:03:35,show-employees HR
+2023-05-20 01:03:40,salary-team 0
+2023-05-20 01:03:42,salary-team 1
+2023-05-20 01:03:45,salary-team 2
+2023-05-20 01:03:48,salary-team 3
+2023-05-20 01:03:50,salary-team 4
+2023-05-20 01:03:53,salary-team 5
+2023-05-20 01:03:56,salary-team 6
+2023-05-20 01:03:58,salary-team 7
+2023-05-20 01:04:01,salary-department DEVELOPER
+2023-05-20 01:04:03,salary-department HR
+2023-05-20 01:04:05,salary-department MARKETING
+2023-05-20 01:04:08,add-project alpha 20/5/2023 0 proiect oop
+2023-05-20 01:04:10,add-project beta 30/6/2024 1 proiect mare de ml
+2023-05-20 01:04:12,add-project gamma 4/7/2023 2 proiect enel
+2023-05-20 01:04:14,add-project delta 27/8/2024 0 proiect vodafone
+2023-05-20 01:04:18,show-projects 0
+2023-05-20 01:04:23,show-projects 1
+2023-05-20 01:04:25,show-projects 2
+2023-05-20 01:04:28,add-task 10 0 trebuie facut frontend imediat
+2023-05-20 01:04:31,add-task 2 1 faceti acum backend
+2023-05-20 01:04:35,add-task 1 0 backend
+2023-05-20 01:04:37,show-tasks 0
+2023-05-20 01:04:41,show-tasks 1
+2023-05-20 01:04:45,add-employee-to-task 0 0
+2023-05-20 01:04:48,show-tasks 0
+2023-05-20 01:04:51,finish-task 0
+2023-05-20 01:04:54,show-tasks 0
+2023-05-20 01:04:57,finish-project 0
+2023-05-20 01:04:59,show-projects 0

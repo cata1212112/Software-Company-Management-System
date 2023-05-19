@@ -10,7 +10,7 @@ public class CreateTeam implements Command{
 
     public CreateTeam(String line) {
         String[] lines = line.split(" ");
-        this.department = Role.valueOf(lines[1].toUpperCase());;
+        this.department = Role.valueOf(lines[1].toUpperCase());
         this.nume = lines[2];
     }
 

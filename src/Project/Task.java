@@ -23,19 +23,25 @@ public class Task {
         return task_id;
     }
 
-    public Task(String description, int priority, int assignedEmployeeID, int projectID) {
+    public Task(String description, int priority, int projectID) {
         this.description = description;
         this.priority = priority;
-        this.assignedEmployeeID = assignedEmployeeID;
         this.projectID = projectID;
     }
 
     @Override
     public String toString() {
-        return "TASK: " + this.task_id + " PRIORITY: " + this.priority + " PROJECT: " + this.projectID  + " DESCRIPTION: " + this.description;
+        String tmp;
+        if (this.isAssigned) {
+            tmp =  "TASK: " + this.task_id + " ASSIGNED EMPLOYEE " + this.assignedEmployeeID + " PRIORITY: " + this.priority + " PROJECT: " + this.projectID  + " DESCRIPTION: " + this.description;
+        } else {
+            tmp =  "TASK: " + this.task_id + " NOT ASSIGNED: "+ " PRIORITY: " + this.priority + " PROJECT: " + this.projectID  + " DESCRIPTION: " + this.description;
+        }
+        return tmp;
     }
 
     public void setAssignedEmployeeID(int assignedEmployeeID) {
         this.assignedEmployeeID = assignedEmployeeID;
+        this.isAssigned = true;
     }
 }

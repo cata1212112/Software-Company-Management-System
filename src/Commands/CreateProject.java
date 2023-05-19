@@ -4,6 +4,8 @@ import Project.Project;
 import Service.GlobalService;
 import Department.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,10 +15,11 @@ public class CreateProject implements Command{
     private String description;
     private int team_id;
 
-    public CreateProject(String line) {
+    public CreateProject(String line) throws ParseException {
         String[] lines = line.split(" ");
         this.name = lines[1];
-        this.deadline = new Date(lines[2]);
+        SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy");
+        this.deadline = inputFormat.parse(lines[2]);
         this.team_id = Integer.parseInt(lines[3]);
         StringBuilder aux = new StringBuilder();
         for (int i=4; i< lines.length; i++) {

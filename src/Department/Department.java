@@ -19,6 +19,7 @@ public abstract class Department implements Observer {
 
     public void addTeam(Team team) {
         this.teams.put(team.getId(), team);
+        this.teams.get(team.getId()).addObserver(this);
     }
 
     protected Department() {

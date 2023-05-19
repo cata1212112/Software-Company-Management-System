@@ -1,5 +1,6 @@
 package Team;
 
+import Department.Department;
 import Employee.Employee;
 import Observer.Observer;
 import Project.*;
@@ -18,6 +19,7 @@ public class Team {
 
     {
         team_id = id++;
+        observers = new ArrayList<>();
     }
     public Team(String name) {
         this.name = name;
@@ -39,11 +41,6 @@ public class Team {
         this.observers = observers;
     }
 
-
-    /**
-     * Add, Remove and Notify methods for Observer Design Pattern
-     * @param observer
-     */
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
@@ -53,17 +50,11 @@ public class Team {
     }
 
     public void addEmployee(Employee e) {
-        // Add to the employee Map
         employees.put(e.getEmployee_id(), e);
 
-        // Notify the observers a new Employee exists
         observers.forEach(obs -> obs.update(e));
     }
 
-    /**
-     * Methods for Projects
-     * @param pr
-     */
     public void addProject(Project pr) {
         projects.add(pr);
     }

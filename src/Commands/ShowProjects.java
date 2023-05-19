@@ -9,7 +9,7 @@ public class ShowProjects implements Command{
 
     public ShowProjects(String line) {
         String[] lines = line.split(" ");
-        this.teamId = Integer.parseInt(lines[1].split(" ")[1]);
+        this.teamId = Integer.parseInt(lines[1]);
     }
 
     @Override

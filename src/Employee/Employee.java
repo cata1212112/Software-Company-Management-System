@@ -52,7 +52,7 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return "ID: " + this.employee_id + " NAME: " + this.name + " EMAIL: " + this.email + " TEAM: " + this.team_id;
+        return "ID: " + this.employee_id + " NAME: " + this.name + " EMAIL: " + this.email + " TEAM: " + this.team_id + " ROLE " + this.role;
     }
 
     public float getSalary() {

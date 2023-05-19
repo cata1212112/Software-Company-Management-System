@@ -1,11 +1,13 @@
 package Commands;
 
+import java.text.ParseException;
+
 public class CommandFactory {
     private CommandFactory() {
 
     }
 
-    public static Command createCommand(String line) {
+    public static Command createCommand(String line) throws ParseException {
         if (line.contains("add-team")) {
             return new CreateTeam(line);
         } else if (line.contains("add-project")) {

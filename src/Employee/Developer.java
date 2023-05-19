@@ -6,7 +6,7 @@ public class Developer extends Employee{
     private ArrayList<String> programmingLanguages;
 
     public Developer() {
-
+        programmingLanguages = new ArrayList<>();
     }
     public Developer(String name, String email, float salary) {
         super(name, email, salary);

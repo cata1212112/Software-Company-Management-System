@@ -1,0 +1,56 @@
+add-team DEVELOPER Team1
+add-team DEVELOPER Team2
+add-team DEVELOPER Team3
+add-team MARKETING Team4
+add-team MARKETING Team5
+add-team MARKETING Team6
+add-team HR Team7
+add-team HR Team8
+show-teams DEVELOPER
+show-teams MARKETING
+show-teams HR
+add-employee-in-team cata cata@gmail.com 2000 SENIOR_DEVELOPER 0 c++ python
+add-employee-in-team alex alex@gmail.com 1800 JUNIOR_DEVELOPER 1 bash python perl
+add-employee-in-team vald vlad@gmail.com 1500 JUNIOR_DEVELOPER 0 basic C#
+add-employee-in-team toma toma@gmail.com 1600 JUNIOR_DEVELOPER 2 c haskell javascript go
+add-employee-in-team eu eu@gmail.com 1900 SENIOR_DEVELOPER 2 gotran brainfuck J++
+add-employee-in-team tu tu@gmail.com 1000 JUNIOR_DEVELOPER 1 JOSS
+add-employee-in-team noi noi@gmail.com 1500 MARKETING_ASSISTANT 3
+add-employee-in-team voi voi@gmail.com 1400 MARKETING_ASSISTANT 4
+add-employee-in-team ea ea@gmail.com 2200 MARKETING_MANAGER 4
+add-employee-in-team el el@gmail.com 7200 MARKETING_MANAGER 5
+add-employee-in-team ei ei@gmail.com 6200 HR_MANAGER 6
+add-employee-in-team ele ele@gmail.com 4200 HR_ASSISTANT 6
+add-employee-in-team toti toti@gmail.com 5200 HR_ASSISTANT 7
+show-employees DEVELOPER
+show-employees MARKETING
+show-employees HR
+salary-team 0
+salary-team 1
+salary-team 2
+salary-team 3
+salary-team 4
+salary-team 5
+salary-team 6
+salary-team 7
+salary-department DEVELOPER
+salary-department HR
+salary-department MARKETING
+add-project alpha 20/5/2023 0 proiect oop
+add-project beta 30/6/2024 1 proiect mare de ml
+add-project gamma 4/7/2023 2 proiect enel
+add-project delta 27/8/2024 0 proiect vodafone
+show-projects 0
+show-projects 1
+show-projects 2
+add-task 10 0 trebuie facut frontend imediat
+add-task 2 1 faceti acum backend
+add-task 1 0 backend
+show-tasks 0
+show-tasks 1
+add-employee-to-task 0 0
+show-tasks 0
+finish-task 0
+show-tasks 0
+finish-project 0
+show-projects 0

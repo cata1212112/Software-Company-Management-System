@@ -19,6 +19,7 @@ public class Project {
 
     {
         this.project_id = id++;
+        tasks = new ArrayList<>();
     }
 
     public int getProject_id() {

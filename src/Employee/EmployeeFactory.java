@@ -9,7 +9,7 @@ public class EmployeeFactory {
         if (role.equals(Role.DEVELOPER)) {
             return new Developer();
         } else if (role.equals(Role.MARKETING)) {
-            return new MarketingAssistant();
+            return new Marketing();
         } else if (role.equals(Role.HR)) {
             return new HumanResources();
         }
