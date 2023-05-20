@@ -1,9 +1,11 @@
 package Commands;
 
+import Exceptions.ProjectNotFound;
 import Project.Project;
 import Project.Task;
 import Team.Team;
 
+import java.awt.color.ProfileDataException;
 import java.util.Optional;
 
 public class FinishProject implements Command{
@@ -15,7 +17,7 @@ public class FinishProject implements Command{
     }
 
     @Override
-    public void execute() {
+    public void execute() throws ProjectNotFound {
         Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
                 .filter(t -> t.getProjects().stream().anyMatch(p -> p.getProject_id() == this.projectId)).findFirst();
 
@@ -23,6 +25,8 @@ public class FinishProject implements Command{
             Team team = teamOptional.get();
             Project project = team.getProjectByID(projectId);
             team.removeProject(project);
+        } else  {
+            throw new ProjectNotFound(this.projectId);
         }
     }
 }

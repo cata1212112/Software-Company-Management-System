@@ -1,6 +1,7 @@
 package Commands;
 
 import Employee.Employee;
+import Exceptions.TeamNotFound;
 import Team.Team;
 
 import java.util.Optional;
@@ -14,7 +15,7 @@ public class SalaryTeam implements Command{
     }
 
     @Override
-    public void execute() {
+    public void execute() throws TeamNotFound {
         Optional<Team> teamOptional1 = departmentIT.get().getTeams().values().stream()
                 .filter(t -> t.getId() == this.team_id).findFirst();
 
@@ -37,6 +38,8 @@ public class SalaryTeam implements Command{
             for (Employee e: team.getEmployees().values()) {
                 sum += e.getSalary();
             }
+        } else {
+            throw new TeamNotFound(this.team_id);
         }
         System.out.println(sum);
     }

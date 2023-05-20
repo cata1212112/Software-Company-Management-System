@@ -1,5 +1,6 @@
 package Commands;
 
+import Exceptions.TeamNotFound;
 import Project.Project;
 import Service.GlobalService;
 import Department.*;
@@ -29,7 +30,11 @@ public class CreateProject implements Command{
     }
 
     @Override
-    public void execute() {
-        departmentIT.get().getTeams().get(team_id).addProject(new Project(this.name, this.deadline, this.description, this.team_id));
+    public void execute() throws TeamNotFound {
+        try {
+            departmentIT.get().getTeams().get(team_id).addProject(new Project(this.name, this.deadline, this.description, this.team_id));
+        } catch (NullPointerException e) {
+            throw new TeamNotFound(this.team_id);
+        }
     }
 }

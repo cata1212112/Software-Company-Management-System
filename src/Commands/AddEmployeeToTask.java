@@ -1,6 +1,8 @@
 package Commands;
 
 import Employee.Employee;
+import Exceptions.EmployeeNotFound;
+import Exceptions.TaskNotFound;
 import Project.*;
 import Team.Team;
 
@@ -20,7 +22,7 @@ public class AddEmployeeToTask implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws EmployeeNotFound, TaskNotFound {
         Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
                 .filter(t -> t.getEmployees().values().stream().anyMatch(e -> e.getEmployee_id() == this.employeeId)).findFirst();
 
@@ -35,8 +37,12 @@ public class AddEmployeeToTask implements Command {
             if (taskOptional.isPresent()) {
                 Task task = taskOptional.get();
                 task.setAssignedEmployeeID(employeeId);
+            } else {
+                throw new TaskNotFound(this.taskId);
             }
 
+        } else {
+            throw new EmployeeNotFound(this.employeeId);
         }
     }
 }

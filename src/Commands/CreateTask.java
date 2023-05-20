@@ -1,5 +1,6 @@
 package Commands;
 
+import Exceptions.ProjectNotFound;
 import Project.*;
 import Team.Team;
 import Service.GlobalService;
@@ -24,14 +25,18 @@ public class CreateTask implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws ProjectNotFound {
 
-        Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
-                .filter(t -> t.getProjects().stream().anyMatch(pr -> pr.getProject_id() == this.project_id)).findFirst();
+        try {
+            Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
+                    .filter(t -> t.getProjects().stream().anyMatch(pr -> pr.getProject_id() == this.project_id)).findFirst();
 
-        if (teamOptional.isPresent()) {
-            Project project = teamOptional.get().getProjectByID(this.project_id);
-            project.addTaskToProject(new Task(this.description, this.priority, this.project_id));
+            if (teamOptional.isPresent()) {
+                Project project = teamOptional.get().getProjectByID(this.project_id);
+                project.addTaskToProject(new Task(this.description, this.priority, this.project_id));
+            }
+        } catch (Exception e) {
+            throw new ProjectNotFound(this.project_id);
         }
     }
 }

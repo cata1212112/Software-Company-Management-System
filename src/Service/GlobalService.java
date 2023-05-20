@@ -29,7 +29,12 @@ public class GlobalService {
             Command command = CommandFactory.createCommand(input);
             if (command != null) {
                 AuditService.log(input);
-                command.execute();
+                try {
+                    command.execute();
+                } catch (Exception e) {
+                    AuditService.log(e.getMessage());
+                    System.out.println(e.getMessage());
+                }
             } else {
                 System.out.println("Invalid command: " + input);
             }

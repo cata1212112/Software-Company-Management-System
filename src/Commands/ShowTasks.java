@@ -1,6 +1,7 @@
 package Commands;
 
 import Employee.Role;
+import Exceptions.ProjectNotFound;
 import Project.Project;
 import Team.Team;
 
@@ -14,7 +15,7 @@ public class ShowTasks implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws ProjectNotFound {
 
         Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
                 .filter(t -> t.getProjects().stream().anyMatch(pr -> pr.getProject_id() == this.projectId)).findFirst();
@@ -22,6 +23,8 @@ public class ShowTasks implements Command {
         if (teamOptional.isPresent()) {
             Project project = teamOptional.get().getProjectByID(projectId);
             project.showTasks();
+        } else {
+            throw new ProjectNotFound(this.projectId);
         }
     }
 }

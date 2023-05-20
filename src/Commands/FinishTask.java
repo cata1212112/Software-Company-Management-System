@@ -1,5 +1,6 @@
 package Commands;
 
+import Exceptions.TaskNotFound;
 import Project.*;
 import Team.Team;
 
@@ -15,7 +16,7 @@ public class FinishTask implements Command{
     }
 
     @Override
-    public void execute() {
+    public void execute() throws TaskNotFound {
         Optional<Project> projectOptional = departmentIT.get().getTeams().values().stream()
                 .flatMap(team -> team.getProjects().stream())
                 .filter(p -> p.getTasks().stream()
@@ -25,6 +26,8 @@ public class FinishTask implements Command{
             Project project = projectOptional.get();
             Task task = project.getTasks().get(taskId);
             project.removeTask(task);
+        } else {
+            throw new TaskNotFound(this.taskId);
         }
     }
 }

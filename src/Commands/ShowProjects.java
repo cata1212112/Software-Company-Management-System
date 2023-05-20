@@ -1,6 +1,7 @@
 package Commands;
 
 import Employee.Role;
+import Exceptions.TeamNotFound;
 import Team.Team;
 
 public class ShowProjects implements Command{
@@ -13,10 +14,14 @@ public class ShowProjects implements Command{
     }
 
     @Override
-    public void execute() {
-        Team team = departmentIT.get().getTeams().get(teamId);
+    public void execute() throws TeamNotFound {
+        try {
+            Team team = departmentIT.get().getTeams().get(teamId);
 
-        team.showProjects();
+            team.showProjects();
+        } catch (NullPointerException e) {
+            throw new TeamNotFound(this.teamId);
+        }
     }
 
 }
