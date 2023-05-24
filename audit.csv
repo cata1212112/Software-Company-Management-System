@@ -1,2 +1,6 @@
-2023-05-21 00:53:34,add-team ewqwe Team1
-2023-05-21 00:53:34,Provided department: EWQWE does not exist!
+2023-05-24 21:43:13,add-team DEVELOPER Team1
+2023-05-24 21:43:14,add-project alpha 20/5/2023 0 proiect oop
+2023-05-24 21:43:16,add-task 10 0 trebuie facut frontend imediat
+2023-05-24 21:43:19,show-teams DEVELOPER
+2023-05-24 21:43:21,delete-team 0
+2023-05-24 21:43:23,show-teams DEVELOPER

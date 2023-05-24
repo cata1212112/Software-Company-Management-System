@@ -15,6 +15,7 @@ public class AuditService {
             file = new FileWriter("audit.csv");
         } catch (IOException e) {
             System.out.println(e.toString());
+            System.exit(0);
         }
     }
     private AuditService() {

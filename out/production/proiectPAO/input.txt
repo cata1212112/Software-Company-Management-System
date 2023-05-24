@@ -54,3 +54,23 @@ finish-task 0
 show-tasks 0
 finish-project 0
 show-projects 0
+
+===============
+add-team DEVELOPER Team1
+add-employee-in-team cata cata@gmail.com 2000 SENIOR_DEVELOPER 0 c++ python
+add-employee-in-team alex alex@gmail.com 1800 JUNIOR_DEVELOPER 0 bash python perl
+show-employees DEVELOPER
+add-project alpha 20/5/2023 0 proiect oop
+add-task 10 0 trebuie facut frontend imediat
+add-employee-to-task 0 0
+finish-project 0
+show-tasks 0
+delete-team 0
+delete-employee 0
+delete-employee 1
+show-employees DEVELOPER
+show-tasks 0
+show-projects 0
+show-teams DEVELOPER
+delete-team 0
+show-teams DEVELOPER

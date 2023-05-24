@@ -41,7 +41,16 @@ public class Task {
     }
 
     public void setAssignedEmployeeID(int assignedEmployeeID) {
-        this.assignedEmployeeID = assignedEmployeeID;
-        this.isAssigned = true;
+        if (assignedEmployeeID < 0) {
+            this.isAssigned = false;
+            this.assignedEmployeeID = -1;
+        } else {
+            this.assignedEmployeeID = assignedEmployeeID;
+            this.isAssigned = true;
+        }
+    }
+
+    public int getAssignedEmployeeID() {
+        return this.assignedEmployeeID;
     }
 }

@@ -26,6 +26,12 @@ public class Team {
         employees = new TreeMap<>();
     }
 
+    public Team(int id, String name) {
+        this.team_id = id;
+        this.name = name;
+        employees = new TreeMap<>();
+    }
+
     public Map<Integer, Employee> getEmployees() {
         return employees;
     }
@@ -89,5 +95,17 @@ public class Team {
         this.projects.remove(pr);
     }
 
+    public void removeEmployee(int employeeID) {
+        try {
+            this.employees.get(employeeID).setTeam_id(-1);
+            this.employees.remove(employeeID);
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public boolean checkEmployee(int employeeID) {
+        return this.employees.values().stream().anyMatch(x->x.getEmployee_id()==employeeID);
+    }
 
 }

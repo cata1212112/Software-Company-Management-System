@@ -61,6 +61,6 @@ public class Project {
     }
 
     public void removeTask(Task task) {
-        this.tasks.remove(task);
+        this.tasks.removeIf(x -> x.getTask_id() == task.getTask_id());
     }
 }

@@ -51,4 +51,8 @@ public abstract class Department implements Observer {
         return sum;
     }
 
+    public ArrayList<Employee> getEmployees() {
+        return this.employees;
+    }
+
 }

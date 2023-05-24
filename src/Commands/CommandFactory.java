@@ -34,6 +34,10 @@ public class CommandFactory {
             return new FinishTask(line);
         } else if (line.contains("finish-project")) {
             return new FinishProject(line);
+        } else if (line.contains("delete-team")) {
+            return new DeleteTeam(line);
+        } else if (line.contains("delete-employee")) {
+            return new DeleteEmployee(line);
         }
         return null;
     }
