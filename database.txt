@@ -1,6 +1,7 @@
 CREATE TABLE teams (
                        team_id SERIAL PRIMARY KEY,
-                       name VARCHAR(255) NOT NULL
+                       name VARCHAR(255) NOT NULL,
+                       department VARCHAR(20)
 );
 
 CREATE TABLE employees (

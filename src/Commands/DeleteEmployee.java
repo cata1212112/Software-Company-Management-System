@@ -1,9 +1,9 @@
 package Commands;
 
-import Employee.Employee;
+import Model.Employee.Employee;
 import Exceptions.*;
-import Project.*;
-import Team.Team;
+import Model.Project.*;
+import Repositories.EmployeeRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,8 +27,10 @@ public class DeleteEmployee implements Command{
         if (!employeeOptional1.isPresent() && !employeeOptional2.isPresent() && !employeeOptional3.isPresent()) {
             throw new EmployeeNotFound(this.employeeId);
         } else if (employeeOptional2.isPresent()){
+            EmployeeRepository.getInstance().delete(this.employeeId);
             departmentHR.get().getEmployees().removeIf(x -> x.getEmployee_id() == this.employeeId);
         } else if (employeeOptional3.isPresent()) {
+            EmployeeRepository.getInstance().delete(this.employeeId);
             departmentMarketing.get().getEmployees().removeIf(x -> x.getEmployee_id() == this.employeeId);
         } else {
             List<Project> projects = departmentIT.get().getTeams().values().stream().filter(x -> x.checkEmployee(this.employeeId)).findFirst().get().getProjects();
@@ -40,6 +42,8 @@ public class DeleteEmployee implements Command{
             }
             departmentIT.get().getTeams().values().stream().filter(x -> x.checkEmployee(this.employeeId)).forEach(x -> x.removeEmployee(this.employeeId));
             departmentIT.get().getEmployees().removeIf(x -> x.getEmployee_id() == this.employeeId);
+            EmployeeRepository.getInstance().delete(this.employeeId);
+
 
         }
     }

@@ -1,7 +1,7 @@
 package Commands;
 
-import Employee.*;
-import Exceptions.IllegalDepartment;
+import Exceptions.EmailAlreadyInUse;
+import Model.Employee.*;
 import Exceptions.IllegalPosition;
 import Exceptions.TeamNotFound;
 
@@ -29,7 +29,7 @@ public class AddEmployeeToTeam implements Command{
     }
 
     @Override
-    public void execute() throws IllegalPosition, TeamNotFound {
+    public void execute() throws IllegalPosition, TeamNotFound, EmailAlreadyInUse {
         try {
             this.position = Role.Position.valueOf(this.pos);
         } catch (Exception e) {
@@ -50,6 +50,15 @@ public class AddEmployeeToTeam implements Command{
                 break;
             default:
                 throw new IllegalPosition(this.position.toString());
+        }
+
+
+        long cnt1 = departmentIT.get().getEmployees().stream().filter(x -> x.getEmail().equals(this.email)).count();
+        long cnt2 = departmentHR.get().getEmployees().stream().filter(x -> x.getEmail().equals(this.email)).count();
+        long cnt3 = departmentMarketing.get().getEmployees().stream().filter(x -> x.getEmail().equals(this.email)).count();
+
+        if (cnt1 > 0 || cnt2 > 0 || cnt3 > 0) {
+            throw new EmailAlreadyInUse(this.email);
         }
 
         // Create new employee
@@ -75,6 +84,5 @@ public class AddEmployeeToTeam implements Command{
         } catch (Exception e) {
             throw e;
         }
-
     }
 }

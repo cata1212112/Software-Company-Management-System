@@ -1,13 +1,10 @@
 package Commands;
 
 import Exceptions.TeamNotFound;
-import Project.Project;
-import Service.GlobalService;
-import Department.*;
+import Model.Project.Project;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class CreateProject implements Command{

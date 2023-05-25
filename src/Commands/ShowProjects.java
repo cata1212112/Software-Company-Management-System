@@ -1,8 +1,7 @@
 package Commands;
 
-import Employee.Role;
 import Exceptions.TeamNotFound;
-import Team.Team;
+import Model.Team.Team;
 
 public class ShowProjects implements Command{
 

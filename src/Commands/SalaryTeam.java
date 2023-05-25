@@ -1,8 +1,8 @@
 package Commands;
 
-import Employee.Employee;
+import Model.Employee.Employee;
 import Exceptions.TeamNotFound;
-import Team.Team;
+import Model.Team.Team;
 
 import java.util.Optional;
 

@@ -1,13 +1,10 @@
 package Commands;
 
-import Employee.Employee;
 import Exceptions.EmployeeNotFound;
 import Exceptions.TaskNotFound;
-import Project.*;
-import Team.Team;
+import Model.Project.*;
+import Model.Team.Team;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 public class AddEmployeeToTask implements Command {

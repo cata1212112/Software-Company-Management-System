@@ -2,11 +2,9 @@ package Commands;
 
 import Exceptions.ProjectHasTasks;
 import Exceptions.ProjectNotFound;
-import Project.Project;
-import Project.Task;
-import Team.Team;
+import Model.Project.Project;
+import Model.Team.Team;
 
-import java.awt.color.ProfileDataException;
 import java.util.Optional;
 
 public class FinishProject implements Command{

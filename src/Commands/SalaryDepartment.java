@@ -1,6 +1,6 @@
 package Commands;
 
-import Employee.*;
+import Model.Employee.*;
 import Exceptions.IllegalDepartment;
 
 public class SalaryDepartment implements Command{

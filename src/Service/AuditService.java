@@ -23,9 +23,9 @@ public class AuditService {
     }
 
     public static void log(String msg) throws IOException {
-        file.append(formatter.format(LocalDateTime.now()));
-        file.append(',');
         file.append(msg);
+        file.append(' ');
+        file.append(formatter.format(LocalDateTime.now()));
         file.append("\n");
         file.flush();
     }

@@ -1,6 +1,6 @@
 package Observer;
 
-import Employee.Employee;
+import Model.Employee.Employee;
 
 public interface Observer {
     void update(Employee employee);

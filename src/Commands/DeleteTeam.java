@@ -1,9 +1,9 @@
 package Commands;
 
-import Employee.Employee;
 import Exceptions.*;
-import Project.*;
-import Team.Team;
+import Model.Project.*;
+import Repositories.TeamRepository;
+import Model.Team.Team;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -39,6 +39,7 @@ public class DeleteTeam implements Command{
                 teamOptional1.get().getProjects().removeIf(x -> true);
 
                 departmentIT.get().getTeams().remove(this.teamID);
+                TeamRepository.getInstance().delete(this.teamID);
 
             }
         }
@@ -48,6 +49,7 @@ public class DeleteTeam implements Command{
                 throw new TeamHasEmployees("Team " + this.teamID + " has employees!");
             } else {
                 departmentHR.get().getTeams().remove(this.teamID);
+                TeamRepository.getInstance().delete(this.teamID);
             }
         }
 
@@ -56,6 +58,8 @@ public class DeleteTeam implements Command{
                 throw new TeamHasEmployees("Team " + this.teamID + " has employees!");
             } else {
                 departmentMarketing.get().getTeams().remove(this.teamID);
+                TeamRepository.getInstance().delete(this.teamID);
+
             }
         }
     }

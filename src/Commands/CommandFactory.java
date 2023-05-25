@@ -38,6 +38,10 @@ public class CommandFactory {
             return new DeleteTeam(line);
         } else if (line.contains("delete-employee")) {
             return new DeleteEmployee(line);
+        } else if (line.contains("update-team-name")) {
+            return new UpdateTeamName(line);
+        } else if (line.contains("update-employee-name")) {
+            return new UpdateEmployeeName(line);
         }
         return null;
     }

@@ -1,9 +1,8 @@
 package Repositories;
 
 import CRUD.CRUDInterface;
-import Employee.*;
+import Model.Employee.*;
 import Service.DatabaseService;
-import Team.Team;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class EmployeeRepository implements CRUDInterface<Employee> {
     @Override
     public Employee create(Employee Entity) {
         try {
-            String query = "INSERT INTO employees (employee_id, name, email, team_id, salary, role, department, prLang) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO employees (employee_id, name, email, team_id, salary, role, department, prlangs) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setInt(1, Entity.getEmployee_id());
             stmt.setString(2, Entity.getName());
@@ -69,7 +68,7 @@ public class EmployeeRepository implements CRUDInterface<Employee> {
                 String dep = res.getString("department");
 
                 ArrayList<String> prLang = new ArrayList<>();
-                Array hobbiesArray = res.getArray("prLang");
+                Array hobbiesArray = res.getArray("prlangs");
                 if (hobbiesArray != null) {
                     ResultSet hobbiesResult = hobbiesArray.getResultSet();
                     while (hobbiesResult.next()) {
@@ -80,8 +79,8 @@ public class EmployeeRepository implements CRUDInterface<Employee> {
 
                 if (dep.equals("HR")) {
                     arr.add(new HumanResources(id, name, email, teamID, salary, Role.Position.valueOf(role)));
-                } else if (dep.equals("Marketing")) {
-                    arr.add(new Marketing(id, name, email, teamID, salary, Role.Position.valueOf(role)));
+                } else if (dep.equals("MARKETING")) {
+                    arr.add(new MarketingEmp(id, name, email, teamID, salary, Role.Position.valueOf(role)));
                 } else {
                     arr.add(new Developer(id, name, email, teamID, salary, Role.Position.valueOf(role), prLang));
 
@@ -110,6 +109,16 @@ public class EmployeeRepository implements CRUDInterface<Employee> {
 
     @Override
     public Employee update(Employee Entity) {
-        return null;
+        try {
+            String query = "UPDATE employees SET name = ? WHERE employee_id = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, Entity.getName());
+            stmt.setInt(2, Entity.getEmployee_id());
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return Entity;
     }
 }

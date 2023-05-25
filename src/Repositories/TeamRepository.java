@@ -1,8 +1,9 @@
 package Repositories;
 
 import CRUD.CRUDInterface;
+import Model.Employee.Role;
 import Service.DatabaseService;
-import Team.Team;
+import Model.Team.Team;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -26,10 +27,11 @@ public class TeamRepository implements CRUDInterface<Team> {
     @Override
     public Team create(Team Entity) {
         try {
-            String query = "INSERT INTO teams (team_id, name) VALUES (?, ?)";
+            String query = "INSERT INTO teams (team_id, name, department) VALUES (?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setInt(1, Entity.getId());
             stmt.setString(2, Entity.getName());
+            stmt.setString(3, Entity.getDep().toString());
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
@@ -46,7 +48,7 @@ public class TeamRepository implements CRUDInterface<Team> {
             Statement stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
             while (res.next()) {
-                arr.add(new Team(res.getInt("team_id"), res.getString("name")));
+                arr.add(new Team(res.getInt("team_id"), res.getString("name"), Role.valueOf(res.getString("department"))));
             }
             stmt.close();
         } catch (SQLException e) {
@@ -70,6 +72,16 @@ public class TeamRepository implements CRUDInterface<Team> {
 
     @Override
     public Team update(Team Entity) {
-        return null;
+        try {
+            String query = "UPDATE teams SET name = ? WHERE team_id = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, Entity.getName());
+            stmt.setInt(2, Entity.getId());
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return Entity;
     }
 }

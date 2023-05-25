@@ -1,9 +1,8 @@
 package Commands;
 
 import Exceptions.ProjectNotFound;
-import Project.*;
-import Team.Team;
-import Service.GlobalService;
+import Model.Project.*;
+import Model.Team.Team;
 
 import java.util.Optional;
 

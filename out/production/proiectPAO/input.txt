@@ -74,3 +74,35 @@ show-projects 0
 show-teams DEVELOPER
 delete-team 0
 show-teams DEVELOPER
+
+===========
+Testate BD
+add-team DEVELOPER Team1
+add-team DEVELOPER Team2
+add-team DEVELOPER Team3
+add-team HR Team5
+add-team HR Team6
+add-team Marketing Team7
+show-teams DEVELOPER
+show-teams HR
+show-teams Marketing
+delete-team 1
+show-teams DEVELOPER
+add-team Marketing Team8
+update-team-name 3 schimba
+show-teams HR
+
+============
+show-teams DEVELOPER
+add-employee-in-team cata cata@gmail.com 2000 SENIOR_DEVELOPER 0 c++ python
+add-employee-in-team ei ei@gmail.com 6200 HR_MANAGER 3
+add-employee-in-team ele ele@gmail.com 4200 HR_ASSISTANT 3
+add-employee-in-team noi noi@gmail.com 1500 MARKETING_ASSISTANT 5
+add-employee-in-team voi voi@gmail.com 1400 MARKETING_ASSISTANT 6
+show-employees DEVELOPER
+show-employees MARKETING
+show-employees HR
+add-employee-in-team cataNOU cata@gmail.com 2000 SENIOR_DEVELOPER 0 c++ python
+show-employees MARKETING
+update-employee-name 4 testSchimbaNume
+show-employees MARKETING

@@ -1,6 +1,6 @@
 package Commands;
 
-import Employee.*;
+import Model.Employee.*;
 import Exceptions.IllegalDepartment;
 
 public class ShowTeams implements Command{
@@ -24,7 +24,7 @@ public class ShowTeams implements Command{
                 default -> throw new IllegalDepartment(this.department.toString());
             }
         } catch (Exception e) {
-            throw new IllegalDepartment(this.department.toString());
+            throw new IllegalDepartment(this.dep);
         }
     }
 

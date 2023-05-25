@@ -1,7 +1,7 @@
 package Repositories;
 
 import CRUD.CRUDInterface;
-import Project.*;
+import Model.Project.*;
 import Service.DatabaseService;
 
 import java.sql.Connection;

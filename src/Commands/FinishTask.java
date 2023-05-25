@@ -1,8 +1,7 @@
 package Commands;
 
 import Exceptions.TaskNotFound;
-import Project.*;
-import Team.Team;
+import Model.Project.*;
 
 import java.util.Optional;
 
