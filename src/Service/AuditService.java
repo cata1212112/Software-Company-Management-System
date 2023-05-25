@@ -29,4 +29,12 @@ public class AuditService {
         file.append("\n");
         file.flush();
     }
+
+    public static void close_file() {
+        try {
+            file.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

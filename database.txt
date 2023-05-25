@@ -4,13 +4,14 @@ CREATE TABLE teams (
 );
 
 CREATE TABLE employees (
-                           employee_id SERIAL PRIMARY KEY,
-                           name VARCHAR(255) NOT NULL,
-                           email VARCHAR(255) NOT NULL,
-                           team_id INT REFERENCES teams(team_id),
-                           salary DECIMAL(10, 2) NOT NULL,
-                           role VARCHAR(20) NOT NULL,
-                           department VARCHAR(20)
+                      employee_id SERIAL PRIMARY KEY,
+                      name VARCHAR(255) NOT NULL,
+                      email VARCHAR(255) NOT NULL,
+                      team_id INT REFERENCES teams(team_id),
+                      salary DECIMAL(10, 2) NOT NULL,
+                      role VARCHAR(20) NOT NULL,
+                      department VARCHAR(20),
+                      prLangs VARCHAR(255)[]
 );
 
 CREATE TABLE projects (

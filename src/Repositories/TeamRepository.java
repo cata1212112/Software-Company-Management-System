@@ -16,7 +16,7 @@ public class TeamRepository implements CRUDInterface<Team> {
 
     }
 
-    public TeamRepository getInstance() {
+    public static TeamRepository getInstance() {
         if (instance == null) {
             instance = new TeamRepository();
         }

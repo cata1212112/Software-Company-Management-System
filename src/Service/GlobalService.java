@@ -23,6 +23,8 @@ public class GlobalService {
             String input = scanner.nextLine();
 
             if (input.equals("q")) {
+                AuditService.close_file();
+                DatabaseService.close();
                 break;
             }
 

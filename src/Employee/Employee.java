@@ -1,5 +1,7 @@
 package Employee;
 
+import java.util.ArrayList;
+
 public abstract class Employee {
     private static int id = 0;
 
@@ -40,6 +42,15 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    public Employee(int employee_id, String name, String email, int team_id, float salary, Role.Position role) {
+        this.employee_id = employee_id;
+        this.name = name;
+        this.email = email;
+        this.team_id = team_id;
+        this.salary = salary;
+        this.role = role;
+    }
+
     public int getEmployee_id() {
         return employee_id;
     }
@@ -58,4 +69,24 @@ public abstract class Employee {
     public float getSalary() {
         return salary;
     }
+
+    public abstract String getDep();
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getTeam_id() {
+        return team_id;
+    }
+
+    public Role.Position getRole() {
+        return role;
+    }
+
+    public abstract ArrayList<String> getPrLag();
 }

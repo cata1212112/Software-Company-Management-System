@@ -16,7 +16,7 @@ public class ProjectRepository implements CRUDInterface<Project> {
 
     }
 
-    public ProjectRepository getInstance() {
+    public static ProjectRepository getInstance() {
         if (instance == null) {
             instance = new ProjectRepository();
         }

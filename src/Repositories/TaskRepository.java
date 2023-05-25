@@ -16,7 +16,7 @@ public class TaskRepository implements CRUDInterface<Task> {
 
     }
 
-    public TaskRepository getInstance() {
+    public static TaskRepository getInstance() {
         if (instance == null) {
             instance = new TaskRepository();
         }
