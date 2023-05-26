@@ -42,6 +42,8 @@ public class CommandFactory {
             return new UpdateTeamName(line);
         } else if (line.contains("update-employee-name")) {
             return new UpdateEmployeeName(line);
+        } else if (line.contains("update-project-team")) {
+            return new UpdateProjectTeam(line);
         }
         return null;
     }

@@ -4,6 +4,7 @@ import Model.Employee.*;
 import Observer.Observer;
 import Model.Project.*;
 import Repositories.EmployeeRepository;
+import Repositories.ProjectRepository;
 
 import java.util.*;
 
@@ -85,6 +86,11 @@ public class Team {
 
     public void addProject(Project pr) {
         projects.add(pr);
+        ProjectRepository.getInstance().create(pr);
+    }
+
+    public void addProjectnodb(Project pr) {
+        projects.add(pr);
     }
 
     public Project getProjectByID(int id) {
@@ -115,6 +121,7 @@ public class Team {
 
     public void removeProject(Project pr) {
         this.projects.remove(pr);
+        ProjectRepository.getInstance().delete(pr.getProject_id());
     }
 
     public void removeEmployee(int employeeID) {

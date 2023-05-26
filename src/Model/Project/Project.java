@@ -1,5 +1,7 @@
 package Model.Project;
 
+import Repositories.ProjectRepository;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -34,6 +36,18 @@ public class Project {
         this.team_id = team_id;
     }
 
+    public Project(int project_id, boolean isAssigned, String name, int team_id, Date deadline, String description) {
+        id = Math.max(id, project_id+1);
+        this.project_id = project_id;
+        this.isAssigned = isAssigned;
+        this.name = name;
+        this.team_id = team_id;
+        this.deadline = deadline;
+        this.description = description;
+        tasks = new ArrayList<>();
+
+    }
+
     public void showTasks() {
         System.out.println("Tasks:");
         tasks.stream()
@@ -60,5 +74,30 @@ public class Project {
 
     public void removeTask(Task task) {
         this.tasks.removeIf(x -> x.getTask_id() == task.getTask_id());
+    }
+
+    public boolean isAssigned() {
+        return isAssigned;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getTeam_id() {
+        return team_id;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setTeam_id(int team_id) {
+        this.team_id = team_id;
+        ProjectRepository.getInstance().update(this);
     }
 }

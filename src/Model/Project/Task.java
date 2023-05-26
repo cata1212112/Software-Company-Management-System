@@ -49,4 +49,8 @@ public class Task {
     public int getAssignedEmployeeID() {
         return this.assignedEmployeeID;
     }
+
+    public boolean isAssigned() {
+        return isAssigned;
+    }
 }

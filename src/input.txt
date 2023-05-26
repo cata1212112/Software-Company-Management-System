@@ -106,3 +106,16 @@ add-employee-in-team cataNOU cata@gmail.com 2000 SENIOR_DEVELOPER 0 c++ python
 show-employees MARKETING
 update-employee-name 4 testSchimbaNume
 show-employees MARKETING
+
+==============
+show-teams DEVELOPER
+add-project alpha 20/5/2023 0 proiect oop
+add-project beta 30/6/2024 2 proiect mare de ml
+add-project gamma 4/7/2023 2 proiect enel
+show-projects 0
+show-projects 2
+finish-project 2
+update-project-team 0 2
+show-projects 0
+show-projects 2
+=============

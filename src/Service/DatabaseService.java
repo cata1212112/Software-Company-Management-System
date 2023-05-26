@@ -4,7 +4,9 @@ import Model.Department.HR;
 import Model.Department.IT;
 import Model.Employee.*;
 import Model.Department.Marketing;
+import Model.Project.Project;
 import Repositories.EmployeeRepository;
+import Repositories.ProjectRepository;
 import Repositories.TeamRepository;
 import Model.Team.Team;
 
@@ -67,6 +69,13 @@ public class DatabaseService {
                 t.ifPresent(team -> team.addEmployeeNODB(emp));
             }
         }
+
+        ArrayList<Project> allProjects = ProjectRepository.getInstance().read();
+
+        for (Project pr : allProjects) {
+            IT.getInstance().getTeams().get(pr.getTeam_id()).addProjectnodb(pr);
+        }
+
 
         System.out.println("Done");
     }

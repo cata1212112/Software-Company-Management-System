@@ -36,7 +36,9 @@ public class DeleteTeam implements Command{
                         pr.removeTask(task);
                     }
                 }
-                teamOptional1.get().getProjects().removeIf(x -> true);
+                for (Project pr : new ArrayList<Project>(teamOptional1.get().getProjects())) {
+                    teamOptional1.get().removeProject(pr);
+                }
 
                 departmentIT.get().getTeams().remove(this.teamID);
                 TeamRepository.getInstance().delete(this.teamID);
