@@ -5,8 +5,10 @@ import Model.Department.IT;
 import Model.Employee.*;
 import Model.Department.Marketing;
 import Model.Project.Project;
+import Model.Project.Task;
 import Repositories.EmployeeRepository;
 import Repositories.ProjectRepository;
+import Repositories.TaskRepository;
 import Repositories.TeamRepository;
 import Model.Team.Team;
 
@@ -76,6 +78,12 @@ public class DatabaseService {
             IT.getInstance().getTeams().get(pr.getTeam_id()).addProjectnodb(pr);
         }
 
+        ArrayList<Task> allTasks = TaskRepository.getInstance().read();
+
+        for (Task task : allTasks) {
+            Optional<Team> t = IT.getInstance().getTeams().values().stream().filter(x -> x.getProjects().stream().anyMatch(y -> y.getProject_id() == task.getProjectID())).findFirst();
+            t.get().getProjects().stream().filter(x -> x.getProject_id() == task.getProjectID()).findFirst().get().addTaskToProjectNODB(task);
+        }
 
         System.out.println("Done");
     }

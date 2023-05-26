@@ -25,17 +25,15 @@ public class CreateTask implements Command {
 
     @Override
     public void execute() throws ProjectNotFound {
-
-        try {
             Optional<Team> teamOptional = departmentIT.get().getTeams().values().stream()
                     .filter(t -> t.getProjects().stream().anyMatch(pr -> pr.getProject_id() == this.project_id)).findFirst();
 
             if (teamOptional.isPresent()) {
                 Project project = teamOptional.get().getProjectByID(this.project_id);
                 project.addTaskToProject(new Task(this.description, this.priority, this.project_id));
+            } else {
+                throw new ProjectNotFound(this.project_id);
+
             }
-        } catch (Exception e) {
-            throw new ProjectNotFound(this.project_id);
-        }
     }
 }

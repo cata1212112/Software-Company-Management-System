@@ -1,5 +1,7 @@
 package Model.Project;
 
+import Repositories.TaskRepository;
+
 public class Task {
 
     private static int id = 0;
@@ -9,7 +11,7 @@ public class Task {
     private boolean isAssigned = false;
     private int projectID;
 
-    private int assignedEmployeeID;
+    private Integer assignedEmployeeID = null;
 
     {
         this.task_id = id++;
@@ -25,6 +27,16 @@ public class Task {
         this.projectID = projectID;
     }
 
+    public Task(int task_id, String description, int priority, boolean isAssigned, int projectID, Integer assignedEmployeeID) {
+        id = Math.max(id, task_id+1);
+        this.task_id = task_id;
+        this.description = description;
+        this.priority = priority;
+        this.isAssigned = isAssigned;
+        this.projectID = projectID;
+        this.assignedEmployeeID = assignedEmployeeID;
+    }
+
     @Override
     public String toString() {
         String tmp;
@@ -36,21 +48,35 @@ public class Task {
         return tmp;
     }
 
-    public void setAssignedEmployeeID(int assignedEmployeeID) {
+    public void setAssignedEmployeeID(Integer assignedEmployeeID) {
         if (assignedEmployeeID < 0) {
             this.isAssigned = false;
-            this.assignedEmployeeID = -1;
+            this.assignedEmployeeID = null;
         } else {
             this.assignedEmployeeID = assignedEmployeeID;
             this.isAssigned = true;
         }
+
+        TaskRepository.getInstance().update(this);
     }
 
-    public int getAssignedEmployeeID() {
+    public Integer getAssignedEmployeeID() {
         return this.assignedEmployeeID;
     }
 
     public boolean isAssigned() {
         return isAssigned;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public int getProjectID() {
+        return projectID;
     }
 }

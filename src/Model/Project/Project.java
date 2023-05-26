@@ -1,6 +1,7 @@
 package Model.Project;
 
 import Repositories.ProjectRepository;
+import Repositories.TaskRepository;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -66,6 +67,11 @@ public class Project {
 
     public void addTaskToProject(Task t) {
         this.tasks.add(t);
+        TaskRepository.getInstance().create(t);
+    }
+
+    public void addTaskToProjectNODB(Task t) {
+        this.tasks.add(t);
     }
 
     public ArrayList<Task> getTasks() {
@@ -74,6 +80,7 @@ public class Project {
 
     public void removeTask(Task task) {
         this.tasks.removeIf(x -> x.getTask_id() == task.getTask_id());
+        TaskRepository.getInstance().delete(task.getTask_id());
     }
 
     public boolean isAssigned() {

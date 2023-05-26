@@ -1,6 +1,5 @@
-show-projects 0 2023-05-26 18:24:17
-show-projects 2 2023-05-26 18:24:19
-update-project-team 0 2 2023-05-26 18:24:21
-update-project-team 0 0 2023-05-26 18:24:35
-show-projects 0 2023-05-26 18:24:42
-show-projects 2 2023-05-26 18:24:44
+delete-employee 5 2023-05-26 22:06:57
+show-teams DEVELOPER 2023-05-26 22:07:11
+show-tasks 0 2023-05-26 22:07:15
+show-tasks 1 2023-05-26 22:07:18
+show-tasks 3 2023-05-26 22:07:21
