@@ -1,18 +1,24 @@
 # Software-Company-Management-System
 
 Actiuni:
-  - Creeare echipa
-  - Creeare proiect
-  - Creeare task
-  - Adaugare angajat in echipa
-  - Afisare angajati
-  - Afisare echipe
-  - Afisare proiecte
-  - Calculare salariu pentru departament/echipa
-  - Adaugare task pe proiect
-  - Adaugare employee pe task
-  - Terminare task
-  - Terminare proiect
+  - add-employee-in-team (name email salary position teamID programmingLanguages)
+  - add-project (name deadline description teamID)
+  - add-task (description priority projectID)
+  - add-team (department name)
+  - show-employees (department)
+  - show-teams (department)
+  - show-projects (teamID)
+  - show-tasks (projectID)
+  - delete-employee (employeeID)
+  - delete-team (teamid)
+  - finish-project (projectID)
+  - finish-task (taskID)
+  - salary-department (department)
+  - salary-team (teamID)
+  - add-employee-to-task (employeeID taskID)
+  - update-team-name (teamID newName)
+  - update-employee-name (employeeID newName)
+  - update-project-team (projectID newTeamID)
 
 Obiecte:
   - Employee
