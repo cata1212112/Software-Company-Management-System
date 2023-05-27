@@ -23,7 +23,7 @@ public class DatabaseService {
 
     static {
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://192.168.100.8:5433/proiectPAO", "cata", "");
+            conn = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5433/proiectPAO", "cata", "");
         } catch (SQLException e) {
             System.out.println("Could not establish connection! " + e.getMessage());
             System.exit(0);
